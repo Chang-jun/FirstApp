@@ -23,9 +23,10 @@ struct ContentView: View {
             "paperplane.circle.fill",
             "xmark.bin.fill",
         ]
-
+    @State var transparency = 0.0
     @State var count = 0 //count의 값이 바꾸면 다시 그려줌
     @State var imgIndex = 0
+    @State var name = ""
     var body: some View {
                 VStack { //세로로 쌓기
                     Image(systemName: ContentView.names[imgIndex])
@@ -35,6 +36,19 @@ struct ContentView: View {
             Circle()
                 .frame(width:100)
                 .foregroundColor(.green)
+            
+            Slider(value: $transparency) // $를 쓴이유 : 슬라이드는 in,out을 다 해야됌
+            Text("\(transparency)") // transparency : slide value
+                    ZStack {
+                        Rectangle()
+                            .stroke(lineWidth: 8)
+                            .cornerRadius(5)
+                        
+                        TextField("Your Name", text : $name)
+                            .frame(width: 100)
+                            
+                    }.frame(width: 200,height: 50)
+            Text("Your name is \(name)")
             Button {
                 print("Pressed")
                 count += 1
