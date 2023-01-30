@@ -14,18 +14,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
-                Button {
-                    if(imgIndex >= 1)
-                    {
-                        imgIndex -= 1 }
-                } label: {
-                    ZStack {
-                        Capsule().stroke(lineWidth: 5)
-                        Image(systemName: "arrow.left")                }
-                    .frame(width:30,height:30)
-                    
-            }
-                .disabled(imgIndex == 1)
+                //expect rename (repectoring)
+                TopButton(enables: imgIndex > 1)
                 Spacer()
                 Text("\(imgIndex) / 2")
                 Spacer()
@@ -56,5 +46,36 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+// unit Test
+struct TopButton: View {
+    var enables: Bool
+    init(enables: Bool){
+        self.enables = enables
+    }
+    var body: some View {
+        Button {
+        //    if(imgIndex >= 1)
+          //  {
+            //    imgIndex -= 1 }
+        } label: {
+            ZStack {
+                Capsule().stroke(lineWidth: 5)
+                Image(systemName: "arrow.left")                }
+            .frame(width:30,height:30)
+            
+        }
+        .disabled(!enables)
+    }
+}
+
+
+struct TopBotton_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack {
+            TopButton(enables: true)
+            TopButton(enables: false)
+        }
     }
 }
