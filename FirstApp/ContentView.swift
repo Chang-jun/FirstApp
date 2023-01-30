@@ -9,11 +9,39 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        VStack { //세로로 쌓기
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Circle()
+                .frame(width:100)
+                .foregroundColor(.green)
+            Button {
+                print("Pressed")
+            } label: {
+                ZStack {
+                    Capsule().stroke(lineWidth: 5)
+                    Text("This is a Button")
+                }
+                .frame(width:200,height:50)
+            }
+        
+            Text("Hello, Tukorea!")
+                .font(.largeTitle)
+                .foregroundColor(.purple)
+            HStack { //세로로쌓기
+                Image(systemName: "arrow.right")
+                Text("Lee Chang jun")
+                Image(systemName: "folder.badge.person.crop")
+                    .font(.largeTitle)
+                    .foregroundColor(.blue)
+                    
+            }
+            .padding()
+            .background(Color.purple)
+            .padding()
+            //상하좌우에 빈공간, 조절가능
+            .background(Color.black)
         }
         .padding()
     }
