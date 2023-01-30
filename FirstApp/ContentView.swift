@@ -7,17 +7,38 @@
 
 import SwiftUI
 
+struct ImageModifier : ViewModifier {
+    func body(content: Content) ->some View {
+        content
+            .foregroundColor(.red)
+            .padding()
+            .background(Color.yellow)
+            }
+} //imageModifier를 쓰면 설정한걸로 바꿈
+
 struct ContentView: View {
+    static let names = [
+            "pencil.circle.fill",
+            "folder.circle",
+            "paperplane.circle.fill",
+            "xmark.bin.fill",
+        ]
+
+    @State var count = 0 //count의 값이 바꾸면 다시 그려줌
+    @State var imgIndex = 0
     var body: some View {
-        VStack { //세로로 쌓기
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
+                VStack { //세로로 쌓기
+                    Image(systemName: ContentView.names[imgIndex])
+                .modifier(ImageModifier())
+            Image(systemName: "trash.circle")
+                .modifier(ImageModifier())
             Circle()
                 .frame(width:100)
                 .foregroundColor(.green)
             Button {
                 print("Pressed")
+                count += 1
+                imgIndex = (imgIndex + 1) % 4
             } label: {
                 ZStack {
                     Capsule().stroke(lineWidth: 5)
@@ -26,7 +47,7 @@ struct ContentView: View {
                 .frame(width:200,height:50)
             }
         
-            Text("Hello, Tukorea!")
+            Text("Count = \(count)!")
                 .font(.largeTitle)
                 .foregroundColor(.purple)
             HStack { //세로로쌓기
@@ -37,6 +58,7 @@ struct ContentView: View {
                     .foregroundColor(.blue)
                     
             }
+            //modifier
             .padding()
             .background(Color.purple)
             .padding()
