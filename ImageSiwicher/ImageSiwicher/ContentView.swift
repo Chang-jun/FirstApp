@@ -4,41 +4,32 @@
 //
 //  Created by 홍길동 on 2023/01/30.
 //
-
 import SwiftUI
 
 struct ContentView: View {
-    @State var imgIndex = 1
+    @State var page = 1
     let count = 2
-    
     var body: some View {
         VStack {
             HStack {
-                //expect rename (repectoring)
-                TopButton(enables: imgIndex > 1)
-                Spacer()
-                Text("\(imgIndex) / 2")
-                Spacer()
-                Button {
-                    if imgIndex < count {
-                        imgIndex += 1
-                    }
-                } label: {
-                    ZStack {
-                        Capsule().stroke(lineWidth: 5)
-                        Image(systemName: "arrow.right")                }
-                    .frame(width:30,height:30)
-                    
-            }
-                .disabled(imgIndex == 2)
+                TopButton(imageName: "arrow.left.circle", enables: page > 1) {
+                    page -= 1
+                }
 
+                Spacer()
+                Text("\(page) / \(count)")
+                    .font(.largeTitle)
+                Spacer()
+                TopButton(imageName: "arrow.right.circle", enables: page < count) {
+                    page += 1
+                }
             }
             Spacer()
-            Image("common\(imgIndex)")
+            Image("common\(page)")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+            Spacer()
         }
-        
         .padding()
     }
 }
@@ -48,34 +39,29 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-// unit Test
+
 struct TopButton: View {
+    var imageName: String
     var enables: Bool
-    init(enables: Bool){
-        self.enables = enables
-    }
+    var action: ()->Void
     var body: some View {
         Button {
-        //    if(imgIndex >= 1)
-          //  {
-            //    imgIndex -= 1 }
+            action()
         } label: {
-            ZStack {
-                Capsule().stroke(lineWidth: 5)
-                Image(systemName: "arrow.left")                }
-            .frame(width:30,height:30)
+            Image(systemName: imageName)
+                .resizable()
+                .frame(width: 80, height: 80)
             
         }
         .disabled(!enables)
     }
 }
 
-
-struct TopBotton_Previews: PreviewProvider {
+struct TopButton_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            TopButton(enables: true)
-            TopButton(enables: false)
+            TopButton(imageName: "arrow.left", enables: true, action: {})
+            TopButton(imageName: "arrow.right", enables: false, action: {})
         }
     }
 }
