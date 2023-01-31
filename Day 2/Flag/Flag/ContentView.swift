@@ -19,6 +19,7 @@ struct ContentView: View {
                             } label: { //내용
                                 CountryView(country: country) //생성자 넘겨주기
                             }
+                            .shadow(radius: 9)
 
                         }
                     }

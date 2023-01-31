@@ -11,6 +11,7 @@ struct ContentView: View {
     @State var large = false
     @State var transparency = 0.0
     var names = ["A","B","C","D","E"]
+    var countries = ["Korea","Japan","China","America","Taiwon"]
     var body: some View {
         
         NavigationView {
@@ -36,9 +37,16 @@ struct ContentView: View {
                         }
                     }
                     Section("Section 2"){
-                        Text("Hello")
-                        Text("World")
-                        Text("Hello")
+                        ForEach(countries, id : \.self) {
+                            row in
+                            NavigationLink {
+                                Text("Hello \(row)")
+                            } label: {
+                                Image(systemName: "flag")
+                                Text("\(row)")
+                            }
+                            
+                        }
                     }
                     
                 }
