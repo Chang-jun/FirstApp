@@ -10,14 +10,28 @@ import SwiftUI
 struct ContentView: View {
     @State var large = false
     @State var transparency = 0.0
+    var names = ["A","B","C","D","E"]
     var body: some View {
         
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-            Color.red.frame(width: 20,height: 20)
+            List {
+                Section("Section 1"){
+                    ForEach(names, id : \.self) {
+                        row in
+                        VStack {
+                            
+                            Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
+                            Text("Hello \(row)")
+                        }
+                    }
+                }
+                Section("Section 2"){
+                    Text("Hello")
+                    Text("World")
+                    Text("Hello")
+                }
+                
+            }
             Image(systemName: "arrow.right.circle")
                 .resizable()
                 .aspectRatio(1.0, contentMode: .fit) // 비율 지정
@@ -31,6 +45,7 @@ struct ContentView: View {
             Slider(value: $transparency)
                 .padding()
             HStack {
+                Spacer()
                 Toggle(isOn: $large) {
                     //return 생략, 유일한 인자
                     Text("Show Large Circle")
