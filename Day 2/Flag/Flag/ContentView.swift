@@ -9,14 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        List {
-            ForEach(Region.all, id: \.title) { region in
-                Section(region.title) {
-                    ForEach(region.countries, id: \.name) { country in
-                        CountryView(country: country) //생성자 넘겨주기
+        NavigationView {
+            List {
+                ForEach(Region.all, id: \.title) { region in
+                    Section(region.title) {
+                        ForEach(region.countries, id: \.name) { country in
+                            NavigationLink {
+                                Text(country.name)
+                            } label: {
+                                CountryView(country: country) //생성자 넘겨주기
+                            }
+
+                        }
                     }
                 }
             }
+            .navigationTitle("iTunes Countries") //제목추가
+            
         }
     }
     
