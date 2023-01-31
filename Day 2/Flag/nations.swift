@@ -4,9 +4,7 @@
 //
 //  Created by 홍길동 on 2023/01/31.
 //
-
-import Foundation
-
+//Add file -> copy
 
 import Foundation
 struct Country {
