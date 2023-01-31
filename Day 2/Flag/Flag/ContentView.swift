@@ -15,7 +15,7 @@ struct ContentView: View {
                     Section(region.title) {
                         ForEach(region.countries, id: \.name) { country in
                             NavigationLink {
-                                Text(country.name)
+                                CountryDetailView(country: country)
                             } label: {
                                 CountryView(country: country) //생성자 넘겨주기
                             }

@@ -12,6 +12,7 @@
 		A360CE592988F524007B71B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A360CE582988F524007B71B6 /* Assets.xcassets */; };
 		A360CE5C2988F524007B71B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A360CE5B2988F524007B71B6 /* Preview Assets.xcassets */; };
 		A360CE642988F971007B71B6 /* nations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360CE632988F971007B71B6 /* nations.swift */; };
+		A360CE662988FF40007B71B6 /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360CE652988FF40007B71B6 /* CountryDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		A360CE582988F524007B71B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A360CE5B2988F524007B71B6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A360CE632988F971007B71B6 /* nations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nations.swift; sourceTree = SOURCE_ROOT; };
+		A360CE652988FF40007B71B6 /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				A360CE562988F522007B71B6 /* ContentView.swift */,
 				A360CE582988F524007B71B6 /* Assets.xcassets */,
 				A360CE5A2988F524007B71B6 /* Preview Content */,
+				A360CE652988FF40007B71B6 /* CountryDetailView.swift */,
 			);
 			path = Flag;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A360CE662988FF40007B71B6 /* CountryDetailView.swift in Sources */,
 				A360CE572988F522007B71B6 /* ContentView.swift in Sources */,
 				A360CE642988F971007B71B6 /* nations.swift in Sources */,
 				A360CE552988F522007B71B6 /* FlagApp.swift in Sources */,
