@@ -21,7 +21,10 @@ struct ContentView: View {
             Image(systemName: "arrow.right.circle")
                 .resizable()
                 .aspectRatio(1.0, contentMode: .fit) // 비율 지정
-                .frame(width: large ? 200 : 100)
+               // .frame(width: large ? 200 : 100)
+                .scaleEffect(large ? 0.8 : 0.5)
+                .animation(Animation.linear(duration: 0.2), value: large ? 0.8 : 0.5)
+            //animation (방식,시간,크기변화)
                 .foregroundColor(.yellow)
                 .rotationEffect(.radians(transparency*6.28))
                 .shadow(color: .blue ,radius: 20)
