@@ -14,6 +14,7 @@
 		A3D72CCB298A17C40015F9DF /* TapGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72CCA298A17C40015F9DF /* TapGestureView.swift */; };
 		A3D72CCD298A2B540015F9DF /* DragGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72CCC298A2B540015F9DF /* DragGestureView.swift */; };
 		A3D72CCF298A32720015F9DF /* RotationGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72CCE298A32720015F9DF /* RotationGestureView.swift */; };
+		A3D72CD1298A37990015F9DF /* MagnificationGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72CD0298A37990015F9DF /* MagnificationGestureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A3D72CCA298A17C40015F9DF /* TapGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureView.swift; sourceTree = "<group>"; };
 		A3D72CCC298A2B540015F9DF /* DragGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureView.swift; sourceTree = "<group>"; };
 		A3D72CCE298A32720015F9DF /* RotationGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureView.swift; sourceTree = "<group>"; };
+		A3D72CD0298A37990015F9DF /* MagnificationGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnificationGestureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				A3D72CCA298A17C40015F9DF /* TapGestureView.swift */,
 				A3D72CCC298A2B540015F9DF /* DragGestureView.swift */,
 				A3D72CCE298A32720015F9DF /* RotationGestureView.swift */,
+				A3D72CD0298A37990015F9DF /* MagnificationGestureView.swift */,
 			);
 			path = GestureSample;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				A3D72CCF298A32720015F9DF /* RotationGestureView.swift in Sources */,
 				A3D72CBF298A16FD0015F9DF /* MainView.swift in Sources */,
 				A3D72CCB298A17C40015F9DF /* TapGestureView.swift in Sources */,
+				A3D72CD1298A37990015F9DF /* MagnificationGestureView.swift in Sources */,
 				A3D72CBD298A16FD0015F9DF /* GestureSampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

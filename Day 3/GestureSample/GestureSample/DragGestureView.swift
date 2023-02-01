@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+func + (a:CGSize, b:CGSize) ->CGSize {
+    CGSize(width: a.width + b.width, height: a.height + b.height)
+}
 
 struct DragGestureView: View {
     @State var globePosition = CGSize.zero // (0,0)
@@ -17,13 +20,14 @@ struct DragGestureView: View {
                 .font(.largeTitle)
                 .scaleEffect(3.0)
                 .foregroundColor(.blue)
-                .offset(globePosition) //  위치설정
+                .offset(globePosition + globeFinal) //  위치설정
                 .gesture(
                     DragGesture()
                         .onChanged { value in
                             globePosition = value.translation // x,y 움직임 (CGSIZE) = > struct
                         }
                         .onEnded { value in
+                            globeFinal = globeFinal + globePosition
                             globePosition = .zero
                         }
                 )

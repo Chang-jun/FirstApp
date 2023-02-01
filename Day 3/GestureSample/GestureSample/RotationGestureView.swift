@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct RotationGestureView: View {
+    @State var currAngle = Angle.zero
+    @State var finalAngle = Angle.zero
     var body: some View {
         VStack {
+            Text("Angle = \(String(format: "%.1f", currAngle.degrees))") //부동소수점 수 정하는 법
+                Spacer()
             VStack {
                 Image(systemName: "arrow.right.circle")
                     .font(.largeTitle)
@@ -18,8 +22,20 @@ struct RotationGestureView: View {
                     .font(.largeTitle)
                     .padding()
             }
+            .rotationEffect(finalAngle + currAngle)
             .foregroundColor(.purple)
             .background(.orange.opacity(0.3))
+            .gesture(
+                            RotationGesture()
+                                .onChanged { value in
+                                    currAngle = value
+                                }
+                                .onEnded { _ in
+                                    finalAngle += currAngle
+                                    currAngle = .zero
+                                }
+                        )
+            Spacer()
         }
         .frame(maxWidth: .infinity,maxHeight: .infinity)
         .background(.blue.opacity(0.6))
