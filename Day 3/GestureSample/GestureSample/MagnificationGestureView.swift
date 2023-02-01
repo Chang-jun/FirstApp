@@ -32,6 +32,7 @@ struct MagnificationGestureView: View {
                         
                         
                     )
+                    .animation(Animation.easeIn, value: finalScale)
                 
             }
             VStack {
@@ -43,7 +44,7 @@ struct MagnificationGestureView: View {
                     .padding()
                     .onTapGesture {
                         finalScale = 1.0
-                    }
+                    }.animation(Animation.easeIn, value: finalScale)
                 
                 Spacer()
             }
