@@ -13,3 +13,6 @@ let pair = (10,15.1) // pair's type is Int,Double을 가진 튜플
 let point = (x:15,y:10) // 얘도 튜플
 point.x
 point.y
+
+
+
