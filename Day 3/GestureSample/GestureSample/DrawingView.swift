@@ -19,7 +19,10 @@ struct DrawingView: View {
                 .frame(height: 50)
                 .padding()
             Capsule()
-                .stroke(lineWidth: 5)
+                .stroke(style: StrokeStyle(lineWidth: 7,lineCap: .round, lineJoin: .round))
+            //lineCap = 선의 양쪽 끝의 모양(square,round,butt)
+            //lineJoin = 모서리 무분 모양
+            
                 .frame(height: 50)
                 .padding(.horizontal)
                 
@@ -27,7 +30,7 @@ struct DrawingView: View {
                 .frame(width: 50)
             Ellipse()
                 .frame(width: 100, height: 50)
-            GeometryReader { gr in 
+            GeometryReader { gr in
                            Path { path in
                                let rect = CGRect(origin: .zero, size: gr.size)
                                path.move(to: CGPoint(x: rect.size.width/2, y: 0))
