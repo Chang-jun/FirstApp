@@ -34,11 +34,14 @@ struct TapGestureView: View {
                 }
              
         }
+        .navigationTitle("Tab & Long Press")
     }
 }
 
 struct TapGestureView_Previews: PreviewProvider {
     static var previews: some View {
-        TapGestureView()
+        NavigationView {
+            TapGestureView()
+        }
     }
 }

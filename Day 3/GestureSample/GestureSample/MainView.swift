@@ -16,6 +16,11 @@ struct MainView: View {
                 } label: {
                     Text("Tap & Long Press")
                 }
+                NavigationLink {
+                    DragGestureView()
+                } label: {
+                    Text("Drag")
+                }
 
             }
             .navigationTitle("Gesture Test Sample")
