@@ -9,21 +9,31 @@ import SwiftUI
 
 struct TapGestureView: View {
 @State var count = 0
+@State var L_count = 0
         
     var body: some View {
-        Text("Hello, World!, \(count)")
-            .font(.largeTitle)
-            .foregroundColor(.gray)
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(.cyan)
-            .gesture(
-                TapGesture()
-                    .onEnded {
-                print("Touch")
-                count += 1
-            }
-        )
+        VStack {
+            Text("Tap!, \(count)")
+                .font(.largeTitle)
+                .foregroundColor(.black)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(.cyan)
+                .onTapGesture { // TapGesture와 동일
+                    print("Touch")
+                    count += 1
+                }
+            Text("Long Press!, \(L_count)")
+                .font(.largeTitle)
+                .foregroundColor(.black)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(.purple)
+                .onLongPressGesture {
+                    L_count += 1
+                }
+             
+        }
     }
 }
 
