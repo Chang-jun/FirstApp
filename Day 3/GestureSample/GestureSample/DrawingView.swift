@@ -27,16 +27,17 @@ struct DrawingView: View {
                 .frame(width: 50)
             Ellipse()
                 .frame(width: 100, height: 50)
-            Path {
-                path in
-                path.move(to: .zero)
-                path.addLine(to: CGPoint(x: 100, y: 200))
-                path.addLine(to: CGPoint(x: 200, y: 100))
-                path.addLine(to: CGPoint(x: 150, y: 50))
-                path.closeSubpath()
-            }
-            .stroke(lineWidth: 10)
-            .fill(.blue.gradient)
+            GeometryReader { gr in 
+                           Path { path in
+                               let rect = CGRect(origin: .zero, size: gr.size)
+                               path.move(to: CGPoint(x: rect.size.width/2, y: 0))
+                               path.addQuadCurve(to: CGPoint(x: rect.size.width/2, y: rect.size.height), control: CGPoint(x: rect.size.width, y: rect.size.height))
+                               path.addQuadCurve(to: CGPoint(x: rect.size.width/2, y: 0), control: CGPoint(x: 0, y: rect.size.height))
+                               path.move(to: .zero)
+                           }
+                           .fill(LinearGradient(gradient: Gradient(colors: [Color.white, Color.blue]), startPoint: .topLeading, endPoint: .bottom))
+                       }
+                       .frame(width: 200, height: 200)
         }
         .navigationTitle("Drawing")
     }
