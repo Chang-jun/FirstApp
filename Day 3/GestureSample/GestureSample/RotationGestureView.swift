@@ -22,7 +22,7 @@ struct RotationGestureView: View {
                     .font(.largeTitle)
                     .padding()
             }
-            .rotationEffect(finalAngle + currAngle)
+            .rotationEffect(finalAngle + currAngle) //각도 기억
             .foregroundColor(.purple)
             .background(.orange.opacity(0.3))
             .gesture(
@@ -31,7 +31,7 @@ struct RotationGestureView: View {
                                     currAngle = value
                                 }
                                 .onEnded { _ in
-                                    finalAngle += currAngle
+                                    finalAngle += currAngle //마지막 각도 기억
                                     currAngle = .zero
                                 }
                         )

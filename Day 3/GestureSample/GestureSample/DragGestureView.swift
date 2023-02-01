@@ -27,7 +27,7 @@ struct DragGestureView: View {
                             globePosition = value.translation // x,y 움직임 (CGSIZE) = > struct
                         }
                         .onEnded { value in
-                            globeFinal = globeFinal + globePosition
+                            globeFinal = globeFinal + globePosition //마지막위치기억
                             globePosition = .zero
                         }
                 )
