@@ -19,10 +19,13 @@ struct DrawingView: View {
                 .frame(height: 50)
                 .padding()
             Capsule()
-                .stroke(style: StrokeStyle(lineWidth: 7,lineCap: .round, lineJoin: .round))
+                .stroke(style: StrokeStyle(lineWidth: 7,lineCap: .round, lineJoin: .round
+                                           ,dash: [10]))
             //lineCap = 선의 양쪽 끝의 모양(square,round,butt)
-            //lineJoin = 모서리 무분 모양
-            
+            //lineJoin = 모서리 무분 모양 , dash : 점선으로 바꿔줌
+                .fill(
+                    RadialGradient(colors: [.blue,.purple,.cyan], center: .center, startRadius: 0, endRadius: 200)
+                ) //중심부터 바깥으로 그라데이션 주기
                 .frame(height: 50)
                 .padding(.horizontal)
                 
@@ -30,7 +33,7 @@ struct DrawingView: View {
                 .frame(width: 50)
             Ellipse()
                 .frame(width: 100, height: 50)
-            GeometryReader { gr in
+            GeometryReader { gr in //물방울 만들기
                            Path { path in
                                let rect = CGRect(origin: .zero, size: gr.size)
                                path.move(to: CGPoint(x: rect.size.width/2, y: 0))
