@@ -22,6 +22,11 @@ struct MainView: View {
                     Text("Drag")
                 }
 
+                NavigationLink {
+                    RotationGestureView()
+                } label: {
+                    Text("Rotation")
+                }
             }
             .navigationTitle("Gesture Test Sample")
         }

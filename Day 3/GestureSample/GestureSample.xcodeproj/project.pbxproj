@@ -13,6 +13,7 @@
 		A3D72CC4298A16FE0015F9DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3D72CC3298A16FE0015F9DF /* Preview Assets.xcassets */; };
 		A3D72CCB298A17C40015F9DF /* TapGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72CCA298A17C40015F9DF /* TapGestureView.swift */; };
 		A3D72CCD298A2B540015F9DF /* DragGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72CCC298A2B540015F9DF /* DragGestureView.swift */; };
+		A3D72CCF298A32720015F9DF /* RotationGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72CCE298A32720015F9DF /* RotationGestureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		A3D72CC3298A16FE0015F9DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A3D72CCA298A17C40015F9DF /* TapGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureView.swift; sourceTree = "<group>"; };
 		A3D72CCC298A2B540015F9DF /* DragGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureView.swift; sourceTree = "<group>"; };
+		A3D72CCE298A32720015F9DF /* RotationGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				A3D72CC2298A16FE0015F9DF /* Preview Content */,
 				A3D72CCA298A17C40015F9DF /* TapGestureView.swift */,
 				A3D72CCC298A2B540015F9DF /* DragGestureView.swift */,
+				A3D72CCE298A32720015F9DF /* RotationGestureView.swift */,
 			);
 			path = GestureSample;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3D72CCD298A2B540015F9DF /* DragGestureView.swift in Sources */,
+				A3D72CCF298A32720015F9DF /* RotationGestureView.swift in Sources */,
 				A3D72CBF298A16FD0015F9DF /* MainView.swift in Sources */,
 				A3D72CCB298A17C40015F9DF /* TapGestureView.swift in Sources */,
 				A3D72CBD298A16FD0015F9DF /* GestureSampleApp.swift in Sources */,
