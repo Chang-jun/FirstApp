@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A3D72CE1298B4BC00015F9DF /* MemoryGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72CE0298B4BC00015F9DF /* MemoryGameApp.swift */; };
-		A3D72CE3298B4BC00015F9DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72CE2298B4BC00015F9DF /* ContentView.swift */; };
+		A3D72CE3298B4BC00015F9DF /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72CE2298B4BC00015F9DF /* GameView.swift */; };
 		A3D72CE5298B4BC20015F9DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3D72CE4298B4BC20015F9DF /* Assets.xcassets */; };
 		A3D72CE8298B4BC20015F9DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3D72CE7298B4BC20015F9DF /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		A3D72CDD298B4BC00015F9DF /* MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D72CE0298B4BC00015F9DF /* MemoryGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameApp.swift; sourceTree = "<group>"; };
-		A3D72CE2298B4BC00015F9DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A3D72CE2298B4BC00015F9DF /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		A3D72CE4298B4BC20015F9DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3D72CE7298B4BC20015F9DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				A3D72CE0298B4BC00015F9DF /* MemoryGameApp.swift */,
-				A3D72CE2298B4BC00015F9DF /* ContentView.swift */,
+				A3D72CE2298B4BC00015F9DF /* GameView.swift */,
 				A3D72CE4298B4BC20015F9DF /* Assets.xcassets */,
 				A3D72CE6298B4BC20015F9DF /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3D72CE3298B4BC00015F9DF /* ContentView.swift in Sources */,
+				A3D72CE3298B4BC00015F9DF /* GameView.swift in Sources */,
 				A3D72CE1298B4BC00015F9DF /* MemoryGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
