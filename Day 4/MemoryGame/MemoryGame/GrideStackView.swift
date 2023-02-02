@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct GrideStackView: View {
+struct GrideStackView<Content: View>: View {
     let cols: Int
     let rows: Int
+    let content : (_ row: Int, _ col: Int)->Content
     var body: some View {
         VStack {
             ForEach(0..<rows, id: \.self) {
@@ -17,11 +18,9 @@ struct GrideStackView: View {
                 HStack {
                     ForEach(0..<cols, id : \.self) {
                         col in
-                        Text("card")
-                            .font(.largeTitle)
+                        self.content(row,col)                            
                     }
                 }
-
             }
         }
     }
@@ -29,6 +28,10 @@ struct GrideStackView: View {
 
 struct GrideStackView_Previews: PreviewProvider {
     static var previews: some View {
-        GrideStackView(cols: 3, rows: 4)
+        GrideStackView(cols: 3, rows: 4) { row, col in
+            Text("Card")
+                .font(.largeTitle)
+                .frame(maxWidth: .infinity,maxHeight: .infinity)
+        }
     }
 }
