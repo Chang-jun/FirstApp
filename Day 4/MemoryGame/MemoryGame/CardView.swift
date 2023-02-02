@@ -11,13 +11,19 @@ struct CardView: View {
     let prefix: String
     let card: Card // struct Card를 가져옴
     @State var frameIndex = 1
+    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+    //autoconnect()로 자동실행
+    
     var body: some View {
         Image(filename)
             .resizable() //화면 크기에 맞춤
             .aspectRatio(contentMode: .fit) // 화면 비율에 맞춰서
-            .onTapGesture {
+            .onReceive(timer) {
+                //0.1초마다 publish해라
+                //publish 할때마다 receive에서 받겠다
+                timer in
                 frameIndex += 1
-                if frameIndex == 8 {
+                if frameIndex > 8 {
                     frameIndex = 1
                 }
             }
