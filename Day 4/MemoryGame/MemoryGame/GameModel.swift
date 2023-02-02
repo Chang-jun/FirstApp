@@ -22,7 +22,7 @@ class GameModel :ObservableObject { //게임 진행의 모든것, class만 옵�
     static let cols = 3 // 코드 수정은 여기서 바꾸면됌
     static let rows = 4 // 정적,상수 , class 멤버, GameModel.~~
     var openCardIndex: Int? //열려있는 카드의 인덱스값이 없을수도있기때문에 옵셔널 사용
-    var score: Double = 0
+    @Published var score: Double = 0
     
     
     @Published var cards = [Card]() //어느 멤버의 수정이 있을때 알림이 가게 하느냐 ? -> Published 
@@ -43,7 +43,9 @@ class GameModel :ObservableObject { //게임 진행의 모든것, class만 옵�
         }
         openCardIndex = nil //이전 게임 데이터를 가지고 있을 수 있음
     }
-    
+    func addTimeScore(amount: Double) {
+            score += amount
+        }
     func card(row: Int, col: Int) -> Card {
             let index = row * Self.cols + col //여기서 대문자 Self는 gameModle
             return cards[index]
