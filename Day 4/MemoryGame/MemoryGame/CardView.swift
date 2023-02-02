@@ -13,7 +13,10 @@ struct CardView: View {
     var open: Bool
     var body: some View {
         Image(filename)
+            .resizable() //화면 크기에 맞춤
+            .aspectRatio(contentMode: .fit) // 화면 비율에 맞춰서
     }
+    
     var filename: String {
         if !open { //early return : 만족하지 않았을 때가 먼저
             return "\(prefix)_back"
