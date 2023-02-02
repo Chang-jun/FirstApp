@@ -18,7 +18,7 @@ struct GrideStackView<Content: View>: View {
                 HStack {
                     ForEach(0..<cols, id : \.self) {
                         col in
-                        self.content(row,col)                            
+                        self.content(row,col)
                     }
                 }
             }

@@ -13,6 +13,7 @@
 		A3D72CE8298B4BC20015F9DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3D72CE7298B4BC20015F9DF /* Preview Assets.xcassets */; };
 		A3D72CEF298B4F930015F9DF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72CEE298B4F930015F9DF /* CardView.swift */; };
 		A3D72CF1298B55B40015F9DF /* GrideStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72CF0298B55B40015F9DF /* GrideStackView.swift */; };
+		A3D72CF3298B60F60015F9DF /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72CF2298B60F60015F9DF /* GameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		A3D72CE7298B4BC20015F9DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A3D72CEE298B4F930015F9DF /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		A3D72CF0298B55B40015F9DF /* GrideStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrideStackView.swift; sourceTree = "<group>"; };
+		A3D72CF2298B60F60015F9DF /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				A3D72CE6298B4BC20015F9DF /* Preview Content */,
 				A3D72CEE298B4F930015F9DF /* CardView.swift */,
 				A3D72CF0298B55B40015F9DF /* GrideStackView.swift */,
+				A3D72CF2298B60F60015F9DF /* GameModel.swift */,
 			);
 			path = MemoryGame;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D72CF3298B60F60015F9DF /* GameModel.swift in Sources */,
 				A3D72CE3298B4BC00015F9DF /* GameView.swift in Sources */,
 				A3D72CEF298B4F930015F9DF /* CardView.swift in Sources */,
 				A3D72CE1298B4BC00015F9DF /* MemoryGameApp.swift in Sources */,
