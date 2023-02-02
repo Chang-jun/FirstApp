@@ -21,12 +21,17 @@ struct CardView: View {
             .onReceive(timer) {
                 //0.1초마다 publish해라
                 //publish 할때마다 receive에서 받겠다
-                timer in
+                _ in
+                if(card.state != .open) {
+                    timer.upstream.connect().cancel()
+                    return
+                }
                 frameIndex += 1
                 if frameIndex > 8 {
                     frameIndex = 1
                 }
             }
+            .opacity(card.state == .removed ? 0 : 1)
     }
         
     
@@ -43,7 +48,13 @@ struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         
         VStack {
-            CardView(prefix: "f", card: Card(number: 1))
+            ForEach(1...10, id:\.self) { num in
+                HStack {
+                    CardView(prefix: "f", card: Card(number: num))
+                    CardView(prefix: "f", card: Card(number: num, state: .closed))
+                    CardView(prefix: "f", card: Card(number: num, state: .removed))
+                }
+            }
         }
     }
 }
