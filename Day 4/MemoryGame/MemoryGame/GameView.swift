@@ -12,9 +12,7 @@ struct GameView: View {
     @State var showsRetryAlert = false
     @Environment(\.presentationMode) var present
     
-    let timerPublisher = Timer.publish(every: 0.1,
-                                       on: .main,
-                                       in: .common).autoconnect()
+    let timerPublisher = Timer.publish(every: 0.1,on: .main,in: .common).autoconnect()
     //s를 붙이는 것은 부울값을 정할때
     @ObservedObject var gameModel = GameModel() // gameview가 생성 -> modelview 생성
     //내가 멤버변수로 가지고있는 것의 멤버변수를 바꿀때, 게임모델의 변화가 있을때 다시 그리겠다

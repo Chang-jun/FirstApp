@@ -11,7 +11,7 @@ struct CardView: View {
     let prefix: String
     let card: Card // struct Card를 가져옴
     @State var frameIndex = 1
-    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 0.08, on: .main, in: .common).autoconnect()
     //autoconnect()로 자동실행
     
     var body: some View {
