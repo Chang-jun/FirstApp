@@ -27,7 +27,8 @@ struct CardView: View {
                     return
                 }
                 frameIndex += 1
-                if frameIndex > 8 {
+                let img = UIImage(named: filename)
+                if(img == nil) {
                     frameIndex = 1
                 }
             }
@@ -50,9 +51,9 @@ struct CardView_Previews: PreviewProvider {
         VStack {
             ForEach(1...10, id:\.self) { num in
                 HStack {
-                    CardView(prefix: "f", card: Card(number: num))
-                    CardView(prefix: "f", card: Card(number: num, state: .closed))
-                    CardView(prefix: "f", card: Card(number: num, state: .removed))
+                    CardView(prefix: "z", card: Card(number: num))
+                    CardView(prefix: "z", card: Card(number: num, state: .closed))
+                    CardView(prefix: "z", card: Card(number: num, state: .removed))
                 }
             }
         }

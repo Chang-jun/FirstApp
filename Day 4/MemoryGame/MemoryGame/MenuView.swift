@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    let prefixes = [ "f", "t"]
+    let prefixes = [ "f", "t","z"]
     var body: some View {
         NavigationView {
             ScrollView(.vertical) {
@@ -18,7 +18,8 @@ struct MenuView: View {
                 }
                 
             }
-                            .navigationTitle("Memory Game")
+            .background(.linearGradient(colors: [.white,.cyan,.blue.opacity(0.6)], startPoint: .bottomLeading, endPoint: .topTrailing))
+            .navigationTitle("Memory Game")
         }
     }
 }
@@ -44,12 +45,21 @@ struct MenuItemView: View {
                             .resizable()
                             .padding(6)
                     }
+                        .rotation3DEffect(
+                        .degrees(30),
+                        axis: (x: 0, y: -1, z: 0)
+                    )
+                    .opacity(0.3)
                 )
                 Spacer()
             NavigationLink {
                 GameView(prefix: prefix)
             } label: {
                 Text("Start game")
+                    .foregroundColor(.black)
+                    .font(.largeTitle)
+                    
+                    
             }
             Spacer()
         }

@@ -19,11 +19,11 @@ struct Card {
 }
 
 class GameModel :ObservableObject { //게임 진행의 모든것, class만 옵저버블이 될수이씀
-    static let cols = 3 // 코드 수정은 여기서 바꾸면됌
-    static let rows = 4 // 정적,상수 , class 멤버, GameModel.~~
+    static let cols = 4 // 코드 수정은 여기서 바꾸면됌
+    static let rows = 5 // 정적,상수 , class 멤버, GameModel.~~
     var openCardIndex: Int? //열려있는 카드의 인덱스값이 없을수도있기때문에 옵셔널 사용
     @Published var score: Double = 0
-    
+    private var paircount = 0
     
     @Published var cards = [Card]() //어느 멤버의 수정이 있을때 알림이 가게 하느냐 ? -> Published 
     //var cards : [Card] = [] 같은 표현 [~] = [] Card Array를 만들어서 cards에 넣겠다
@@ -31,16 +31,21 @@ class GameModel :ObservableObject { //게임 진행의 모든것, class만 옵�
     init() {
         start()
     }
+    var over : Bool {
+        paircount == 0
+    }
     
     func start() {
         score = 0
         cards = []
         let max =  Self.cols * Self.rows / 2
+        paircount = max
         for number in 1...max {
             cards.append(Card(number: number,state: .closed))
             cards.append(Card(number: number, state: .closed)) // 다른언어의 경우 reference type이여서 안되지만, swift는 value type이여서 둘은 다른거임
             
         }
+        //cards.shuffle()
         openCardIndex = nil //이전 게임 데이터를 가지고 있을 수 있음
     }
     func addTimeScore(amount: Double) {
@@ -63,6 +68,7 @@ class GameModel :ObservableObject { //게임 진행의 모든것, class만 옵�
                 cards[index].state = .removed
                 openCardIndex = nil
                 score += 10.0
+                paircount -= 1
                 return
             }
             cards[oci].state = .closed
