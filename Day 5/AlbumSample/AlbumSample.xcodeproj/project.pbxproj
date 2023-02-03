@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A37153C0298CA1AD005B8CCC /* albums.json in Resources */ = {isa = PBXBuildFile; fileRef = A37153BF298CA1AD005B8CCC /* albums.json */; };
+		A37153C2298CA1F4005B8CCC /* AlbumsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37153C1298CA1F4005B8CCC /* AlbumsStore.swift */; };
 		A3D72D03298C9FE50015F9DF /* AlbumSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72D02298C9FE50015F9DF /* AlbumSampleApp.swift */; };
 		A3D72D05298C9FE50015F9DF /* AlbumSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D72D04298C9FE50015F9DF /* AlbumSample.swift */; };
 		A3D72D07298C9FE70015F9DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3D72D06298C9FE70015F9DF /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		A37153BF298CA1AD005B8CCC /* albums.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = albums.json; sourceTree = "<group>"; };
+		A37153C1298CA1F4005B8CCC /* AlbumsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsStore.swift; sourceTree = "<group>"; };
 		A3D72CFF298C9FE50015F9DF /* AlbumSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D72D02298C9FE50015F9DF /* AlbumSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSampleApp.swift; sourceTree = "<group>"; };
 		A3D72D04298C9FE50015F9DF /* AlbumSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSample.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				A3D72D10298CA06C0015F9DF /* res */,
 				A3D72D02298C9FE50015F9DF /* AlbumSampleApp.swift */,
 				A3D72D04298C9FE50015F9DF /* AlbumSample.swift */,
+				A37153C1298CA1F4005B8CCC /* AlbumsStore.swift */,
 				A3D72D06298C9FE70015F9DF /* Assets.xcassets */,
 				A3D72D08298C9FE70015F9DF /* Preview Content */,
 			);
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A37153C2298CA1F4005B8CCC /* AlbumsStore.swift in Sources */,
 				A3D72D05298C9FE50015F9DF /* AlbumSample.swift in Sources */,
 				A3D72D03298C9FE50015F9DF /* AlbumSampleApp.swift in Sources */,
 			);
