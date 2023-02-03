@@ -12,6 +12,7 @@
 		A37153D7298CD300005B8CCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A37153D6298CD300005B8CCC /* Assets.xcassets */; };
 		A37153DA298CD300005B8CCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A37153D9298CD300005B8CCC /* Preview Assets.xcassets */; };
 		A37153E1298CD335005B8CCC /* PoiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37153E0298CD335005B8CCC /* PoiData.swift */; };
+		A37153E3298CDF57005B8CCC /* PoiDetailVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37153E2298CDF57005B8CCC /* PoiDetailVeiw.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		A37153D6298CD300005B8CCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A37153D9298CD300005B8CCC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A37153E0298CD335005B8CCC /* PoiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiData.swift; sourceTree = "<group>"; };
+		A37153E2298CDF57005B8CCC /* PoiDetailVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiDetailVeiw.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				A37153D2298CD2FF005B8CCC /* PoiSampleApp.swift */,
+				A37153E2298CDF57005B8CCC /* PoiDetailVeiw.swift */,
 				A37153D4298CD2FF005B8CCC /* ContentView.swift */,
 				A37153D6298CD300005B8CCC /* Assets.xcassets */,
 				A37153D8298CD300005B8CCC /* Preview Content */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A37153E3298CDF57005B8CCC /* PoiDetailVeiw.swift in Sources */,
 				A37153E1298CD335005B8CCC /* PoiData.swift in Sources */,
 				A37153D5298CD2FF005B8CCC /* ContentView.swift in Sources */,
 				A37153D3298CD2FF005B8CCC /* PoiSampleApp.swift in Sources */,
