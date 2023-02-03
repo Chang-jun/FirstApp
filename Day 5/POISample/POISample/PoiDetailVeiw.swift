@@ -13,11 +13,8 @@ struct PoiDetailView: View {
     @State var region: MKCoordinateRegion
     init(poi: PoiItem) {
         self.poi = poi
-        let lat = CLLocationDegrees(poi.REFINE_WGS84_LAT) ?? 0
-        let lng = CLLocationDegrees(poi.REFINE_WGS84_LOGT) ?? 0
-        let center = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
-        self.region = MKCoordinateRegion(center: center, span: span)
+        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+        self.region = MKCoordinateRegion(center: poi.location, span: span)
     }
     var body: some View {
         ScrollView(.vertical) {
@@ -45,13 +42,28 @@ struct PoiDetailView: View {
                         Text(poi.TASTFDPLC_TELNO)
                     }
                 }
-                Map(coordinateRegion: $region)
+                Map(coordinateRegion: $region, annotationItems: [poi]) {
+                    poi in
+                    MapMarker(coordinate: poi.location , tint: .red)
+                }
                     .frame(maxWidth: .infinity)
                     .aspectRatio(contentMode: .fit)
             }
         }
         .navigationTitle(poi.RESTRT_NM)
     }
+}
+
+
+extension PoiItem : Identifiable {
+    var id: String {RESTRT_NM}
+    var location: CLLocationCoordinate2D {
+        let lat = CLLocationDegrees(self.REFINE_WGS84_LAT) ?? 0
+        let lng = CLLocationDegrees(self.REFINE_WGS84_LOGT) ?? 0
+        return CLLocationCoordinate2D(latitude: lat, longitude: lng)
+       
+    }
+    
 }
 
 struct PropertyView<Content: View>: View {
