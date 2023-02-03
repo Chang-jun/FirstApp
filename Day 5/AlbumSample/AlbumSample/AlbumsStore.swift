@@ -25,7 +25,7 @@ class AlbumStore: ObservableObject {
     @Published var albums = [Album]()
     
     func load() {
-        guard let url = Bundle.main.url(forResource: "res/albums.json", withExtension: "") else {
+        guard let url = Bundle.main.url(forResource: "albums.json", withExtension: "") else {
             print("BUG??????")
             return
         }

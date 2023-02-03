@@ -8,18 +8,29 @@
 import SwiftUI
 
 struct AlbumListView: View {
+    @ObservedObject var albumStore = AlbumStore.get()
+    
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(AlbumStore.get().albums, id: \.albumTitle) { album in
+                    ForEach(albumStore.albums, id: \.albumTitle) { album in
                         AlbumItemView(album: album)
                     }
                 }
             }
-//            .onAppear {
-//                AlbumStore.get().load()
-//            }
+            .overlay {
+                ZStack { // 어떤 것위에 Zㅅ스택쌓는거랑 비슷
+                    Color.gray.opacity(0.75)
+                        .frame(width : .infinity,height: .infinity)
+                    ProgressView()
+                }
+                .opacity(albumStore.albums.count == 0 ? 1.0 : 0.0)
+            }
+            
+                .onAppear {
+                    albumStore.load()
+                }
             .navigationTitle("Albums")
         }
     }
@@ -31,19 +42,32 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-
 struct AlbumItemView: View {
     let album: Album
+    @State var image: Image?
     var body: some View {
         HStack {
-            Image(systemName: "music.note.list")
+            albumImage()
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 64)
-            VStack {
+            VStack(alignment: .leading) {
                 Text(album.albumTitle)
+                    .font(.headline)
+                    .lineLimit(2)
+                    .foregroundColor(Color("albumTitleColor"))
                 Text(album.artistName)
+                    .font(.footnote)
+                    .foregroundColor(Color("artistNameColor"))
+                    .padding(.top, 4)
             }
+        }
+    }
+    func albumImage() -> Image {
+//        if image != nil { return image! }
+        if let image = image { return image }
+        return ImageStore.load(urlString: album.image) { img in
+            image = img
         }
     }
 }
